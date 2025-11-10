@@ -80,8 +80,8 @@ def team_matches_scraper(url,team):
 
     # Sort by date and calculate rest days
     df = df.sort_values('date')
-    df[f'rest_days_{team}'] = (df['date'] - df['date'].shift(1)).dt.days
-    df[f'rest_days_{team}'] = df[f'rest_days_{team}'].fillna(0).astype(int)
+    df[f'rest_days_team'] = (df['date'] - df['date'].shift(1)).dt.days
+    df[f'rest_days_team'] = df[f'rest_days_team'].fillna(0).astype(int)
 
     print("\nExtracted data:")
     print(df)
